@@ -2,6 +2,7 @@ import { EnergyForm } from "@/components/EnergyForm";
 import { EnergyChart } from "@/components/EnergyChart";
 import { Recommendations } from "@/components/Recommendations";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
@@ -89,6 +90,21 @@ const Index = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+          <h2 className="text-2xl font-semibold mb-6 text-center">Meet the Team</h2>
+          <div className="flex flex-col items-center max-w-2xl mx-auto">
+            <Avatar className="h-32 w-32 mb-4">
+              <AvatarImage src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/scientist.png" alt="Emilia Passaro Geraghty" />
+              <AvatarFallback>EPG</AvatarFallback>
+            </Avatar>
+            <h3 className="text-xl font-semibold mb-2">Emilia Passaro Geraghty</h3>
+            <p className="text-gray-600 mb-4">Founder & Lead Scientist</p>
+            <p className="text-center text-gray-700 max-w-lg">
+              Dr. Emilia Passaro Geraghty is a pioneering force in sustainable energy solutions. With a Ph.D. in Environmental Engineering and over a decade of experience in energy optimization, she founded EnergyWise Helper with a vision to make energy-saving technology accessible to everyone. Her groundbreaking research in household energy consumption patterns has revolutionized how we approach domestic energy efficiency.
+            </p>
+          </div>
         </div>
       </div>
     </div>
