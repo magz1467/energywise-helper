@@ -10,7 +10,7 @@ const Index = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
-            <h2 className="text-2xl font-semibold mb-4">Input Your Data</h2>
+            <h2 className="text-2xl font-semibold mb-4">Get Your Personalised Savings</h2>
             <EnergyForm />
           </div>
           <div>
