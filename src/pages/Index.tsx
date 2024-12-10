@@ -6,27 +6,38 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div 
+      className="min-h-screen bg-gradient-to-b from-[#F2FCE2] to-[#E2F4D7] py-8"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=80&w=2000&h=1000')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundBlendMode: 'soft-light',
+      }}
+    >
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-8">Home Energy Manager</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Get Your Personalised Savings</h2>
-            <EnergyForm />
+        <div className="bg-white/90 p-8 rounded-lg shadow-lg backdrop-blur-sm mb-8">
+          <h1 className="text-4xl font-bold text-center mb-8">Home Energy Manager</h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Get Your Personalised Savings</h2>
+              <EnergyForm />
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Usage Overview</h2>
+              <EnergyChart />
+            </div>
           </div>
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">Usage Overview</h2>
-            <EnergyChart />
+          
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Recommendations</h2>
+            <Recommendations />
           </div>
-        </div>
-        
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Recommendations</h2>
-          <Recommendations />
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {[
@@ -62,7 +73,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
@@ -92,7 +103,7 @@ const Index = () => {
           </Accordion>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
+        <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Meet the Team</h2>
           <div className="flex flex-col items-center max-w-2xl mx-auto">
             <Avatar className="h-32 w-32 mb-4">
