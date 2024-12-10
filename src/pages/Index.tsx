@@ -107,13 +107,13 @@ const Index = () => {
           <h2 className="text-2xl font-semibold mb-6 text-center">Meet the Team</h2>
           <div className="flex flex-col items-center max-w-2xl mx-auto">
             <Avatar className="h-32 w-32 mb-4">
-              <AvatarImage src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/scientist.png" alt="Emilia Passaro Geraghty" />
-              <AvatarFallback>EPG</AvatarFallback>
+              <AvatarImage src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/scientist.png" alt="Our Team" />
+              <AvatarFallback>Team</AvatarFallback>
             </Avatar>
-            <h3 className="text-xl font-semibold mb-2">Emilia Passaro Geraghty</h3>
-            <p className="text-gray-600 mb-4">Founder & Lead Scientist</p>
+            <h3 className="text-xl font-semibold mb-2">Our Expert Team</h3>
+            <p className="text-gray-600 mb-4">Dedicated Energy Specialists</p>
             <p className="text-center text-gray-700 max-w-lg">
-              Dr. Emilia Passaro Geraghty is a pioneering force in sustainable energy solutions. With a Ph.D. in Environmental Engineering and over a decade of experience in energy optimization, she founded EnergyWise Helper with a vision to make energy-saving technology accessible to everyone. Her groundbreaking research in household energy consumption patterns has revolutionized how we approach domestic energy efficiency.
+              Our team consists of experienced environmental engineers, data scientists, and sustainability experts who are passionate about making energy efficiency accessible to everyone. With decades of combined experience in energy optimization and environmental science, we work together to provide you with accurate, actionable insights for reducing your energy consumption.
             </p>
           </div>
         </div>
