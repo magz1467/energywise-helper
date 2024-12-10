@@ -9,7 +9,7 @@ const Index = () => {
     <div 
       className="min-h-screen bg-gradient-to-b from-[#F2FCE2] to-[#E2F4D7] py-8"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=80&w=2000&h=1000')`,
+        backgroundImage: `url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&q=80&w=2000&h=1000')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
