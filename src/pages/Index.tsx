@@ -14,7 +14,7 @@ import {
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#F2FCE2]">
+    <div className="min-h-screen bg-[#F2FCE2] flex flex-col">
       <nav className="w-full bg-white/90 backdrop-blur-sm shadow-sm mb-8 sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <NavigationMenu className="py-4">
@@ -46,7 +46,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 flex-grow">
         <div className="bg-white/90 p-8 rounded-lg shadow-lg backdrop-blur-sm mb-8">
           <h1 className="text-4xl font-bold text-center mb-8">Home Energy Manager</h1>
           
@@ -184,6 +184,58 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      <footer className="bg-white/90 backdrop-blur-sm mt-16 border-t border-gray-200">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-semibold mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-primary">About Us</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Careers</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Contact</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-primary">Terms & Conditions</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Privacy Policy</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Cookie Policy</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">GDPR Compliance</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Support</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="text-gray-600 hover:text-primary">Help Centre</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">FAQs</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Customer Service</a></li>
+                <li><a href="#" className="text-gray-600 hover:text-primary">Complaints</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4">Contact Us</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-600">123 Energy Street</li>
+                <li className="text-gray-600">London, EC1A 1BB</li>
+                <li className="text-gray-600">United Kingdom</li>
+                <li><a href="tel:+44-20-1234-5678" className="text-gray-600 hover:text-primary">+44 20 1234 5678</a></li>
+                <li><a href="mailto:support@energywise.co.uk" className="text-gray-600 hover:text-primary">support@energywise.co.uk</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-600 text-sm">© 2024 EnergyWise Helper. All rights reserved. Registered in England and Wales (Company No. 12345678)</p>
+              <div className="mt-4 md:mt-0">
+                <p className="text-gray-600 text-sm">Regulated by <a href="#" className="hover:text-primary">Ofgem</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
