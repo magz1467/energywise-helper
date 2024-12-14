@@ -7,13 +7,11 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 const Index = () => {
   return (
     <div 
-      className="min-h-screen bg-gradient-to-b from-[#F2FCE2] to-[#E2F4D7] py-8"
+      className="min-h-screen bg-[#F2FCE2] py-8"
       style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&q=80&w=2000&h=1000')`,
+        backgroundColor: '#F2FCE2',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-        backgroundBlendMode: 'soft-light',
       }}
     >
       <div className="container mx-auto px-4">
@@ -72,7 +70,6 @@ const Index = () => {
             ))}
           </div>
         </div>
-
         <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="w-full">
@@ -102,7 +99,6 @@ const Index = () => {
             </AccordionItem>
           </Accordion>
         </div>
-
         <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Meet the Team</h2>
           <div className="flex flex-col items-center max-w-2xl mx-auto">
