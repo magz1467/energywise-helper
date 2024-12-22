@@ -8,11 +8,11 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#F2FCE2] flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <TopNav />
 
       <div className="container mx-auto px-4 flex-grow">
-        <div className="bg-white/90 p-8 rounded-lg shadow-lg backdrop-blur-sm mb-8">
+        <div className="bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8">
           <HeroSection />
           <MainContent />
           
