@@ -8,9 +8,6 @@ export const MainContent = () => {
       <div>
         <div className="mb-6">
           <h2 className="text-2xl font-semibold mb-3">Get Your Personalised Energy Savings Quote</h2>
-          <p className="text-muted-foreground mb-4">
-            Enter your energy usage details to see how much you could save in seconds.
-          </p>
         </div>
         <EnergyForm />
       </div>
