@@ -18,11 +18,6 @@ export const TrustMarkers = () => {
       alt: "Electrical Safety Register Logo"
     },
     {
-      name: "Electrical Compliance Certificate",
-      logo: "/lovable-uploads/581597e0-24e8-426c-8adf-83c9cd42f0a3.png",
-      alt: "Electrical Compliance Certificate Logo"
-    },
-    {
       name: "Home Assistant",
       logo: "/lovable-uploads/68b6ad92-de19-4a38-9f45-26d0995d5c35.png",
       alt: "Home Assistant Logo"
@@ -37,7 +32,7 @@ export const TrustMarkers = () => {
   return (
     <div className="py-8">
       <h2 className="text-2xl font-semibold text-center mb-8">Accredited By</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+      <div className="flex flex-row gap-8 items-center justify-center flex-wrap">
         {partners.map((partner) => (
           <div key={partner.name} className="w-32 h-16 flex items-center justify-center">
             <img
