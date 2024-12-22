@@ -1,5 +1,4 @@
 import { EnergyForm } from "@/components/EnergyForm";
-import { EnergyChart } from "@/components/EnergyChart";
 import { Recommendations } from "@/components/Recommendations";
 import { TrustedInstallers } from "@/components/TrustedInstallers";
 import { TopNav } from "@/components/TopNav";
@@ -22,8 +21,14 @@ const Index = () => {
               <EnergyForm />
             </div>
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Usage Overview</h2>
-              <EnergyChart />
+              <h2 className="text-2xl font-semibold mb-4">Professional Installation</h2>
+              <div className="rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/c14727a7-dbff-419d-b8f1-313c9edbd2c5.png" 
+                  alt="Professional electrician installing smart home devices" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
           

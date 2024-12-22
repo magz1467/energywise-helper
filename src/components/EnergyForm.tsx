@@ -4,11 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-import { SavingsResult } from "./SavingsResult";
+import { useNavigate } from "react-router-dom";
 
 export const EnergyForm = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
-  const [showResults, setShowResults] = useState(false);
   const [formData, setFormData] = useState({
     electricityUsage: "",
     gasUsage: "",
@@ -81,25 +81,9 @@ export const EnergyForm = () => {
     }
   };
 
-  const resetForm = () => {
-    setStep(1);
-    setShowResults(false);
-    setFormData({
-      electricityUsage: "",
-      gasUsage: "",
-      homeSize: "",
-      occupants: "",
-      email: "",
-    });
-  };
-
   const handleSubmit = () => {
-    setShowResults(true);
+    navigate("/savings-overview", { state: { formData } });
   };
-
-  if (showResults) {
-    return <SavingsResult formData={formData} onReset={resetForm} />;
-  }
 
   const currentStep = steps[step - 1];
 
