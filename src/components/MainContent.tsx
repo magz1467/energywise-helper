@@ -6,6 +6,12 @@ export const MainContent = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
       <div>
+        <div className="mb-6">
+          <h2 className="text-2xl font-semibold mb-3">Get Your Personalised Energy Savings Quote</h2>
+          <p className="text-muted-foreground mb-4">
+            Enter your energy usage details to receive a tailored savings analysis and see how much you could save with our AI-powered smart devices. Our customers save an average of £1,456 annually!
+          </p>
+        </div>
         <EnergyForm />
       </div>
       <div>
