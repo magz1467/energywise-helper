@@ -22,10 +22,6 @@ export const HeroSection = () => {
             <span>4.7 Trustpilot</span>
           </div>
         </div>
-        
-        <p className="text-lg text-muted-foreground mb-6">
-          Smarter home energy savings without the hassle. Join thousands of homeowners and start saving on your energy bills today.
-        </p>
       </div>
     </div>
   );
