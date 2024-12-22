@@ -1,7 +1,6 @@
 import { TopNav } from "@/components/TopNav";
 import { HeroSection } from "@/components/HeroSection";
 import { MainContent } from "@/components/MainContent";
-import { Recommendations } from "@/components/Recommendations";
 import { TrustedInstallers } from "@/components/TrustedInstallers";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -15,11 +14,6 @@ const Index = () => {
         <div className="bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8">
           <HeroSection />
           <MainContent />
-          
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Recommendations</h2>
-            <Recommendations />
-          </div>
         </div>
 
         <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
