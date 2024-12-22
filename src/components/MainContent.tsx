@@ -2,6 +2,7 @@ import { EnergyForm } from "./EnergyForm";
 import { TrustedInstallers } from "./TrustedInstallers";
 import { RegisterInterest } from "./RegisterInterest";
 import { Separator } from "./ui/separator";
+import { TrustMarkers } from "./TrustMarkers";
 
 export const MainContent = () => {
   return (
@@ -24,6 +25,8 @@ export const MainContent = () => {
         </div>
       </div>
 
+      <TrustMarkers />
+      
       <Separator className="my-12" />
       
       <TrustedInstallers />
