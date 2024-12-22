@@ -4,9 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { SavingsResult } from "./SavingsResult";
 
 export const EnergyForm = () => {
   const [step, setStep] = useState(1);
+  const [showResults, setShowResults] = useState(false);
   const [formData, setFormData] = useState({
     electricityUsage: "",
     gasUsage: "",
@@ -80,8 +82,12 @@ export const EnergyForm = () => {
   };
 
   const handleSubmit = () => {
-    toast.success("Thank you! We'll send your personalized savings to your email.");
+    setShowResults(true);
   };
+
+  if (showResults) {
+    return <SavingsResult formData={formData} />;
+  }
 
   const currentStep = steps[step - 1];
 
