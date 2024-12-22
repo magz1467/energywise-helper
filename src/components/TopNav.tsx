@@ -6,17 +6,18 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { LightbulbIcon } from "lucide-react";
 
 export const TopNav = () => {
   return (
     <nav className="w-full bg-white/90 backdrop-blur-sm shadow-sm mb-8 sticky top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="py-4">
-          <img
-            src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/logo-energywise.png"
-            alt="EnergyWise Logo"
-            className="h-8"
+        <div className="py-4 flex items-center">
+          <LightbulbIcon 
+            className="h-10 w-10 text-primary mr-3" 
+            strokeWidth={2.5} 
           />
+          <span className="text-xl font-bold text-primary">EnergyWise</span>
         </div>
         <NavigationMenu>
           <NavigationMenuList>
