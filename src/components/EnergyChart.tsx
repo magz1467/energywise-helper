@@ -31,7 +31,7 @@ export const EnergyChart = () => {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="currentUsage" name="Current Usage" fill="#EF4444" />
+            <Bar dataKey="currentUsage" name="Current Usage" fill="#FEC6A1" />
             <Bar dataKey="projectedUsage" name="With Savings" fill="#34D399" />
           </BarChart>
         </ResponsiveContainer>

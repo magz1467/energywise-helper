@@ -3,6 +3,7 @@ import { EnergyChart } from "@/components/EnergyChart";
 import { Recommendations } from "@/components/Recommendations";
 import { TrustedInstallers } from "@/components/TrustedInstallers";
 import { TopNav } from "@/components/TopNav";
+import { AiDescription } from "@/components/AiDescription";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -13,7 +14,7 @@ const Index = () => {
 
       <div className="container mx-auto px-4 flex-grow">
         <div className="bg-white/90 p-8 rounded-lg shadow-lg backdrop-blur-sm mb-8">
-          <h1 className="text-4xl font-bold text-center mb-8">Home Energy Manager</h1>
+          <AiDescription />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>

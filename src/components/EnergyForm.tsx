@@ -81,12 +81,24 @@ export const EnergyForm = () => {
     }
   };
 
+  const resetForm = () => {
+    setStep(1);
+    setShowResults(false);
+    setFormData({
+      electricityUsage: "",
+      gasUsage: "",
+      homeSize: "",
+      occupants: "",
+      email: "",
+    });
+  };
+
   const handleSubmit = () => {
     setShowResults(true);
   };
 
   if (showResults) {
-    return <SavingsResult formData={formData} />;
+    return <SavingsResult formData={formData} onReset={resetForm} />;
   }
 
   const currentStep = steps[step - 1];

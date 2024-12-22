@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Check, DollarSign, Home, LoaderCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface SavingsResultProps {
   formData: {
@@ -11,9 +12,10 @@ interface SavingsResultProps {
     occupants: string;
     email: string;
   };
+  onReset: () => void;
 }
 
-export const SavingsResult = ({ formData }: SavingsResultProps) => {
+export const SavingsResult = ({ formData, onReset }: SavingsResultProps) => {
   const [progress, setProgress] = useState(0);
   const [showResults, setShowResults] = useState(false);
 
@@ -107,6 +109,9 @@ export const SavingsResult = ({ formData }: SavingsResultProps) => {
         <p className="text-sm text-muted-foreground mt-2">
           We've sent these calculations to {formData.email}
         </p>
+        <Button onClick={onReset} className="mt-6">
+          New Calculation
+        </Button>
       </div>
     </Card>
   );
