@@ -1,7 +1,6 @@
 import { TopNav } from "@/components/TopNav";
 import { HeroSection } from "@/components/HeroSection";
 import { MainContent } from "@/components/MainContent";
-import { TrustedInstallers } from "@/components/TrustedInstallers";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -87,8 +86,6 @@ const Index = () => {
             ))}
           </div>
         </div>
-
-        <TrustedInstallers />
 
         <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h2>
