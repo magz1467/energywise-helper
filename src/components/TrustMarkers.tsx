@@ -31,7 +31,7 @@ export const TrustMarkers = () => {
 
   return (
     <div className="py-8">
-      <h2 className="text-2xl font-semibold text-center mb-8">Accredited By</h2>
+      <h2 className="text-2xl font-semibold text-center mb-8">Could be working with</h2>
       <div className="flex flex-row gap-8 items-center justify-center flex-wrap">
         {partners.map((partner) => (
           <div key={partner.name} className="w-32 h-16 flex items-center justify-center">
