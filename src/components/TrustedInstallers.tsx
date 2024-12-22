@@ -3,21 +3,21 @@ import { Card, CardContent } from "@/components/ui/card";
 export const TrustedInstallers = () => {
   const installers = [
     {
-      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952",
+      image: "/lovable-uploads/6dc454d9-0b6c-4979-9875-c4b19bbede77.png",
       name: "James Wilson",
       rating: "4.9/5",
       reviews: "127",
       location: "Manchester"
     },
     {
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      image: "/lovable-uploads/889fe454-44c3-409d-b5c4-7c3b5bfbbeca.png",
       name: "Sarah Thompson",
       rating: "4.8/5",
       reviews: "98",
       location: "London"
     },
     {
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      image: "/lovable-uploads/04653bcb-d8ba-48b5-baa5-5fd6bde6a218.png",
       name: "David Clark",
       rating: "4.9/5",
       reviews: "156",
