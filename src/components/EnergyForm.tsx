@@ -6,17 +6,52 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
 export const EnergyForm = () => {
+  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     electricityUsage: "",
     gasUsage: "",
     homeSize: "",
     occupants: "",
+    email: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Data submitted successfully!");
-  };
+  const steps = [
+    {
+      title: "Monthly Electricity Usage",
+      field: "electricityUsage",
+      label: "What's your monthly electricity usage in kWh?",
+      placeholder: "e.g. 900",
+      type: "number",
+    },
+    {
+      title: "Monthly Gas Usage",
+      field: "gasUsage",
+      label: "What's your monthly gas usage in therms?",
+      placeholder: "e.g. 50",
+      type: "number",
+    },
+    {
+      title: "Home Size",
+      field: "homeSize",
+      label: "What's the size of your home in square feet?",
+      placeholder: "e.g. 2000",
+      type: "number",
+    },
+    {
+      title: "Occupants",
+      field: "occupants",
+      label: "How many people live in your home?",
+      placeholder: "e.g. 4",
+      type: "number",
+    },
+    {
+      title: "Email Address",
+      field: "email",
+      label: "What's your email address?",
+      placeholder: "your@email.com",
+      type: "email",
+    },
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -25,63 +60,82 @@ export const EnergyForm = () => {
     });
   };
 
+  const nextStep = () => {
+    const currentField = steps[step - 1].field;
+    if (!formData[currentField as keyof typeof formData]) {
+      toast.error("Please fill in this field before continuing");
+      return;
+    }
+    if (step < steps.length) {
+      setStep(step + 1);
+    } else {
+      handleSubmit();
+    }
+  };
+
+  const prevStep = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
+
+  const handleSubmit = () => {
+    toast.success("Thank you! We'll send your personalized savings to your email.");
+  };
+
+  const currentStep = steps[step - 1];
+
   return (
     <Card className="p-6">
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="mb-6">
+        <div className="flex justify-between mb-2">
+          {steps.map((_, index) => (
+            <div
+              key={index}
+              className={`h-2 flex-1 mx-1 rounded ${
+                index + 1 <= step ? "bg-primary" : "bg-gray-200"
+              }`}
+            />
+          ))}
+        </div>
+        <p className="text-sm text-center text-muted-foreground">
+          Step {step} of {steps.length}
+        </p>
+      </div>
+
+      <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="electricityUsage">Monthly Electricity Usage (kWh)</Label>
+          <Label htmlFor={currentStep.field}>{currentStep.label}</Label>
           <Input
-            id="electricityUsage"
-            name="electricityUsage"
-            type="number"
-            placeholder="e.g. 900"
-            value={formData.electricityUsage}
+            id={currentStep.field}
+            name={currentStep.field}
+            type={currentStep.type}
+            placeholder={currentStep.placeholder}
+            value={formData[currentStep.field as keyof typeof formData]}
             onChange={handleChange}
             required
           />
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="gasUsage">Monthly Gas Usage (therms)</Label>
-          <Input
-            id="gasUsage"
-            name="gasUsage"
-            type="number"
-            placeholder="e.g. 50"
-            value={formData.gasUsage}
-            onChange={handleChange}
-            required
-          />
+        <div className="flex justify-between gap-4 pt-4">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={prevStep}
+            disabled={step === 1}
+            className="w-full"
+          >
+            Previous
+          </Button>
+          <Button
+            type="button"
+            onClick={nextStep}
+            className="w-full"
+          >
+            {step === steps.length ? "Submit" : "Next"}
+          </Button>
         </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="homeSize">Home Size (sq ft)</Label>
-          <Input
-            id="homeSize"
-            name="homeSize"
-            type="number"
-            placeholder="e.g. 2000"
-            value={formData.homeSize}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="occupants">Number of Occupants</Label>
-          <Input
-            id="occupants"
-            name="occupants"
-            type="number"
-            placeholder="e.g. 4"
-            value={formData.occupants}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <Button type="submit" className="w-full">Submit Energy Data</Button>
-      </form>
+      </div>
     </Card>
   );
 };
