@@ -7,18 +7,19 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { LightbulbIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const TopNav = () => {
   return (
     <nav className="w-full bg-white/90 backdrop-blur-sm mb-4 sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="py-4 flex items-center">
+        <Link to="/" className="py-4 flex items-center hover:opacity-80 transition-opacity">
           <LightbulbIcon 
             className="h-10 w-10 text-primary mr-3" 
             strokeWidth={2.5} 
           />
           <span className="text-xl font-bold text-primary">EnergyWise</span>
-        </div>
+        </Link>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
