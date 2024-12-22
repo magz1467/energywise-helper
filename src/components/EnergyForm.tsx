@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export const EnergyForm = () => {
   const navigate = useNavigate();
+  const [started, setStarted] = useState(false);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     electricityUsage: "",
@@ -86,6 +87,24 @@ export const EnergyForm = () => {
   };
 
   const currentStep = steps[step - 1];
+
+  if (!started) {
+    return (
+      <Card className="p-6 text-center">
+        <h3 className="text-xl font-semibold mb-4">Ready to Start Saving?</h3>
+        <p className="text-muted-foreground mb-6">
+          Answer a few quick questions to get your personalized energy savings plan.
+        </p>
+        <Button 
+          onClick={() => setStarted(true)}
+          size="lg"
+          className="w-full md:w-auto"
+        >
+          Start Now
+        </Button>
+      </Card>
+    );
+  }
 
   return (
     <Card className="p-6">
