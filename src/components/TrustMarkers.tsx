@@ -30,15 +30,16 @@ export const TrustMarkers = () => {
   ];
 
   return (
-    <div className="py-8">
-      <h2 className="text-2xl font-semibold text-center mb-8">Could be working with</h2>
-      <div className="flex flex-row gap-8 items-center justify-center flex-wrap">
+    <div className="py-6 sm:py-8">
+      <h2 className="text-xl sm:text-2xl font-semibold text-center mb-6 sm:mb-8">Could be working with</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-8 items-center justify-items-center">
         {partners.map((partner) => (
-          <div key={partner.name} className="w-32 h-16 flex items-center justify-center">
+          <div key={partner.name} className="w-24 sm:w-32 h-12 sm:h-16 flex items-center justify-center">
             <img
               src={partner.logo}
               alt={partner.alt}
               className="max-w-full max-h-full object-contain"
+              loading="lazy"
             />
           </div>
         ))}
