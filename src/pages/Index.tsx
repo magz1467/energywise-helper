@@ -1,8 +1,8 @@
-import { EnergyForm } from "@/components/EnergyForm";
+import { TopNav } from "@/components/TopNav";
+import { HeroSection } from "@/components/HeroSection";
+import { MainContent } from "@/components/MainContent";
 import { Recommendations } from "@/components/Recommendations";
 import { TrustedInstallers } from "@/components/TrustedInstallers";
-import { TopNav } from "@/components/TopNav";
-import { AiDescription } from "@/components/AiDescription";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
@@ -13,24 +13,8 @@ const Index = () => {
 
       <div className="container mx-auto px-4 flex-grow">
         <div className="bg-white/90 p-8 rounded-lg shadow-lg backdrop-blur-sm mb-8">
-          <AiDescription />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Get Your Personalised Savings</h2>
-              <EnergyForm />
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Professional Installation</h2>
-              <div className="rounded-lg overflow-hidden">
-                <img 
-                  src="/lovable-uploads/c14727a7-dbff-419d-b8f1-313c9edbd2c5.png" 
-                  alt="Professional electrician installing smart home devices" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          <HeroSection />
+          <MainContent />
           
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">Recommendations</h2>
