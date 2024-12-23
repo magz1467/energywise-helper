@@ -1,6 +1,6 @@
 export const AwakeningHome = () => {
   return (
-    <div className="py-12 bg-gradient-to-br from-[#E5DEFF] to-[#D3E4FD] text-[#221F26]">
+    <div className="py-12 bg-gradient-to-br from-[#E5DEFF] to-[#D3E4FD] text-[#221F26] rounded-3xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto px-4">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold leading-tight">
