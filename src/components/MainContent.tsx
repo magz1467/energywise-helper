@@ -15,7 +15,7 @@ export const MainContent = () => {
           <EnergyForm />
         </div>
         <div className="order-1 lg:order-2">
-          <div className="rounded-lg overflow-hidden shadow-lg max-h-[500px]">
+          <div className="rounded-lg overflow-hidden shadow-lg h-[500px]">
             <img 
               src="/lovable-uploads/c14727a7-dbff-419d-b8f1-313c9edbd2c5.png" 
               alt="Professional electrician installing smart home devices" 
