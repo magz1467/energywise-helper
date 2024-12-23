@@ -6,23 +6,19 @@ import { TrustMarkers } from "./TrustMarkers";
 
 export const MainContent = () => {
   return (
-    <div className="space-y-8 px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="lg:col-span-1">
-          <div className="mb-6">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-3">Get Your Personalised Energy Savings Quote</h2>
-          </div>
+    <div className="container mx-auto space-y-8 px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 className="text-2xl font-semibold mb-6">Get Your Personalised Energy Savings Quote</h2>
           <EnergyForm />
         </div>
-        <div className="lg:col-span-1">
-          <div className="rounded-lg overflow-hidden shadow-lg h-[300px]">
-            <img 
-              src="/lovable-uploads/c14727a7-dbff-419d-b8f1-313c9edbd2c5.png" 
-              alt="Professional electrician installing smart home devices" 
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
+        <div className="h-[300px] rounded-lg overflow-hidden shadow-lg">
+          <img 
+            src="/lovable-uploads/c14727a7-dbff-419d-b8f1-313c9edbd2c5.png" 
+            alt="Professional electrician installing smart home devices" 
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
         </div>
       </div>
 
