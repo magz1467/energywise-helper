@@ -23,29 +23,49 @@ export const EnergyForm = () => {
       title: "Monthly Electricity Usage",
       field: "electricityUsage",
       label: "What's your monthly electricity usage in kWh?",
-      placeholder: "e.g. 900",
+      placeholder: "Average UK household: 242 kWh/month",
       type: "number",
+      hint: "The average UK household uses around 242 kWh per month",
+      validation: {
+        min: 50,
+        max: 1000,
+      }
     },
     {
       title: "Monthly Gas Usage",
       field: "gasUsage",
-      label: "What's your monthly gas usage in therms?",
-      placeholder: "e.g. 50",
+      label: "What's your monthly gas usage in kWh?",
+      placeholder: "Average UK household: 1000 kWh/month",
       type: "number",
+      hint: "The average UK household uses around 1000 kWh of gas per month",
+      validation: {
+        min: 200,
+        max: 2500,
+      }
     },
     {
       title: "Home Size",
       field: "homeSize",
       label: "What's the size of your home in square feet?",
-      placeholder: "e.g. 2000",
+      placeholder: "Average UK home: 818 sq ft",
       type: "number",
+      hint: "The average UK home is 818 square feet",
+      validation: {
+        min: 200,
+        max: 5000,
+      }
     },
     {
       title: "Occupants",
       field: "occupants",
       label: "How many people live in your home?",
-      placeholder: "e.g. 4",
+      placeholder: "Average UK household: 2.4 people",
       type: "number",
+      hint: "The average UK household has 2.4 people",
+      validation: {
+        min: 1,
+        max: 10,
+      }
     },
     {
       title: "Email Address",
@@ -53,13 +73,29 @@ export const EnergyForm = () => {
       label: "What's your email address?",
       placeholder: "your@email.com",
       type: "email",
+      hint: "We'll send your personalized savings report here",
     },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type } = e.target;
+    const currentStep = steps.find(step => step.field === name);
+    
+    if (type === "number" && currentStep?.validation) {
+      const numValue = Number(value);
+      if (numValue < currentStep.validation.min) {
+        toast.error(`Value must be at least ${currentStep.validation.min}`);
+        return;
+      }
+      if (numValue > currentStep.validation.max) {
+        toast.error(`Value must be less than ${currentStep.validation.max}`);
+        return;
+      }
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
@@ -93,7 +129,7 @@ export const EnergyForm = () => {
       <Card className="p-6 text-center">
         <h3 className="text-xl font-semibold mb-4">Ready to Start Saving?</h3>
         <p className="text-muted-foreground mb-6">
-          Answer a few quick questions to get your personalized energy savings plan.
+          Answer a few quick questions about your energy usage to get your personalized savings plan.
         </p>
         <Button 
           onClick={() => setStarted(true)}
@@ -136,6 +172,9 @@ export const EnergyForm = () => {
             onChange={handleChange}
             required
           />
+          {currentStep.hint && (
+            <p className="text-sm text-muted-foreground">{currentStep.hint}</p>
+          )}
         </div>
 
         <div className="flex justify-between gap-4 pt-4">
