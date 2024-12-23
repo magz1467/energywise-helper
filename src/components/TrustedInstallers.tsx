@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { UKCoverageMap } from "./UKCoverageMap";
+import UKCoverageMap from "./UKCoverageMap";
 
 export const TrustedInstallers = () => {
   const installers = [
