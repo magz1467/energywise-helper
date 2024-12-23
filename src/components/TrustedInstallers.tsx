@@ -37,11 +37,11 @@ export const TrustedInstallers = () => {
         <div className="space-y-4">
           {installers.map((installer) => (
             <Card key={installer.name} className="overflow-hidden">
-              <div className="flex flex-col sm:flex-row lg:flex-col">
+              <div className="flex items-center">
                 <img
                   src={installer.image}
                   alt={installer.name}
-                  className="w-full sm:w-48 lg:w-full h-40 object-cover"
+                  className="w-32 h-32 object-cover"
                   loading="lazy"
                 />
                 <CardContent className="p-4 flex-1">
@@ -57,9 +57,9 @@ export const TrustedInstallers = () => {
           ))}
         </div>
         
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col">
           <UKCoverageMap />
-          <div className="mt-6 text-center">
+          <div className="mt-6">
             <p className="text-gray-700 mb-4 text-sm sm:text-base">
               Every installer in our network:
             </p>
