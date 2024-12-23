@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { UKCoverageMap } from "./UKCoverageMap";
 
 export const TrustedInstallers = () => {
   const installers = [
@@ -31,6 +32,10 @@ export const TrustedInstallers = () => {
       <p className="text-center text-gray-700 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
         Our nationwide network of certified installers is carefully vetted and continuously monitored through our review-driven system. With over 500 trusted professionals across the UK, we ensure quality service delivery and customer satisfaction.
       </p>
+      
+      <div className="mb-8">
+        <UKCoverageMap />
+      </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {installers.map((installer) => (
