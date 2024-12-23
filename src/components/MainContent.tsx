@@ -3,6 +3,7 @@ import { TrustedInstallers } from "./TrustedInstallers";
 import { RegisterInterest } from "./RegisterInterest";
 import { Separator } from "./ui/separator";
 import { TrustMarkers } from "./TrustMarkers";
+import { AwakeningHome } from "./AwakeningHome";
 
 export const MainContent = () => {
   return (
@@ -25,6 +26,8 @@ export const MainContent = () => {
       </div>
 
       <TrustMarkers />
+      
+      <AwakeningHome />
       
       <Separator className="my-8 sm:my-12" />
       
