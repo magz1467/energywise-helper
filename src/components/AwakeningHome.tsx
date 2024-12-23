@@ -23,12 +23,15 @@ export const AwakeningHome = () => {
         </div>
         <div className="flex justify-center">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#E5DEFF]/20 to-transparent rounded-3xl"></div>
-            <img 
-              src="/lovable-uploads/240fc7bf-14e0-47f8-a402-d66b3f268312.png" 
-              alt="Smart home control interface showing energy monitoring"
-              className="max-w-[400px] rounded-3xl shadow-lg"
-            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#E5DEFF]/20 to-transparent rounded-[2rem]"></div>
+            <div className="relative max-w-[400px] rounded-[2rem] overflow-hidden shadow-lg border-8 border-white">
+              <div className="absolute inset-0 bg-[#4C9EEB] rounded-t-2xl h-24"></div>
+              <img 
+                src="/lovable-uploads/2b2155bd-b2aa-4194-bd72-ca9c31e2e286.png" 
+                alt="Smart home control interface showing room controls and energy monitoring"
+                className="relative z-10 w-full"
+              />
+            </div>
           </div>
         </div>
       </div>
