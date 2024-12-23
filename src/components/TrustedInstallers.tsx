@@ -34,7 +34,7 @@ export const TrustedInstallers = () => {
       </p>
       
       <div className="flex flex-col lg:flex-row gap-8">
-        <div className="flex-1 space-y-4">
+        <div className="w-full lg:w-1/2 space-y-4">
           {installers.map((installer) => (
             <Card key={installer.name} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
               <div className="flex items-center p-2">
@@ -62,8 +62,8 @@ export const TrustedInstallers = () => {
           ))}
         </div>
         
-        <div className="lg:w-[400px] flex-shrink-0 space-y-6">
-          <div className="bg-white rounded-lg shadow-md p-4">
+        <div className="w-full lg:w-1/2 space-y-6">
+          <div className="bg-white rounded-lg shadow-md p-4 h-full">
             <UKCoverageMap />
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
