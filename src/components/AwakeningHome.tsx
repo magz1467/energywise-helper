@@ -1,6 +1,6 @@
 export const AwakeningHome = () => {
   return (
-    <div className="py-12 bg-gradient-to-br from-[#E5DEFF] to-[#D3E4FD] text-[#221F26] rounded-3xl">
+    <div className="py-12 bg-gradient-to-br from-[#F6F6F7] to-[#E5DEFF] text-[#221F26] rounded-3xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto px-4">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold leading-tight">
@@ -23,7 +23,7 @@ export const AwakeningHome = () => {
         </div>
         <div className="flex justify-center">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-t from-[#E5DEFF]/20 to-transparent rounded-[2rem]"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#F6F6F7]/20 to-transparent rounded-[2rem]"></div>
             <div className="relative max-w-[400px] rounded-[2rem] overflow-hidden shadow-lg border-8 border-white">
               <div className="absolute inset-0 bg-[#4C9EEB] rounded-t-2xl h-24"></div>
               <img 
