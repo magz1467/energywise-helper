@@ -33,9 +33,9 @@ export const TrustedInstallers = () => {
         Our nationwide network of certified installers is carefully vetted and continuously monitored through our review-driven system. With over 500 trusted professionals across the UK, we ensure quality service delivery and customer satisfaction.
       </p>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="flex flex-col lg:flex-row gap-8">
         {/* Left column - Installer Cards */}
-        <div className="space-y-4">
+        <div className="flex-1 space-y-4">
           {installers.map((installer) => (
             <Card key={installer.name} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
               <div className="flex items-center p-2">
@@ -64,7 +64,7 @@ export const TrustedInstallers = () => {
         </div>
         
         {/* Right column - Map and Quality Assurance */}
-        <div className="space-y-6">
+        <div className="flex-1 space-y-6">
           <div className="bg-white rounded-lg shadow-md p-4">
             <UKCoverageMap />
           </div>
