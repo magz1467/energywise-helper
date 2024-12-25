@@ -60,11 +60,11 @@ export const TrustedInstallers = () => {
                   <AvatarFallback>{installer.name[0]}</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 min-w-0">
-                  <div className="flex justify-between items-start">
-                    <h3 className="font-semibold truncate">{installer.name}</h3>
-                    <span className="text-sm text-gray-500 flex-shrink-0">{installer.location}</span>
+                  <div className="flex flex-col">
+                    <h3 className="font-semibold">{installer.name}</h3>
+                    <span className="text-sm text-gray-500">{installer.location}</span>
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1 mt-2">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <Star
