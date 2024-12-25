@@ -6,35 +6,35 @@ import UKCoverageMap from "./UKCoverageMap";
 export const TrustedInstallers = () => {
   const installers = [
     {
-      name: "Installer One",
+      name: "David Paxman",
       image: "https://example.com/installer1.png",
       rating: 4,
       reviews: 120,
       location: "London",
     },
     {
-      name: "Installer Two",
+      name: "Sarah Mitchell",
       image: "https://example.com/installer2.png",
       rating: 5,
       reviews: 95,
       location: "Manchester",
     },
     {
-      name: "Installer Three",
+      name: "James Richardson",
       image: "https://example.com/installer3.png",
       rating: 3,
       reviews: 50,
       location: "Birmingham",
     },
     {
-      name: "Installer Four",
+      name: "Michael Thompson",
       image: "https://example.com/installer4.png",
       rating: 4,
       reviews: 80,
       location: "Liverpool",
     },
     {
-      name: "Installer Five",
+      name: "Emma Wilson",
       image: "https://example.com/installer5.png",
       rating: 5,
       reviews: 200,
