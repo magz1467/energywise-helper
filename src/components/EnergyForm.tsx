@@ -5,12 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { FORM_STEPS } from "./EnergyFormSteps";
+import { validateNumberInput } from "@/utils/form-validation";
+import { FormData } from "@/types/energy-form";
 
 export const EnergyForm = () => {
   const navigate = useNavigate();
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     electricityUsage: "",
     gasUsage: "",
     homeSize: "",
@@ -18,94 +21,32 @@ export const EnergyForm = () => {
     email: "",
   });
 
-  const steps = [
-    {
-      title: "Monthly Electricity Usage",
-      field: "electricityUsage",
-      label: "What's your monthly electricity usage in kWh?",
-      placeholder: "Average UK household: 242 kWh/month",
-      type: "number",
-      hint: "The average UK household uses around 242 kWh per month",
-      validation: {
-        min: 50,
-        max: 1000,
-      }
-    },
-    {
-      title: "Monthly Gas Usage",
-      field: "gasUsage",
-      label: "What's your monthly gas usage in kWh?",
-      placeholder: "Average UK household: 1000 kWh/month",
-      type: "number",
-      hint: "The average UK household uses around 1000 kWh of gas per month",
-      validation: {
-        min: 200,
-        max: 2500,
-      }
-    },
-    {
-      title: "Home Size",
-      field: "homeSize",
-      label: "What's the size of your home in square feet?",
-      placeholder: "Average UK home: 818 sq ft",
-      type: "number",
-      hint: "The average UK home is 818 square feet",
-      validation: {
-        min: 200,
-        max: 5000,
-      }
-    },
-    {
-      title: "Occupants",
-      field: "occupants",
-      label: "How many people live in your home?",
-      placeholder: "Average UK household: 2.4 people",
-      type: "number",
-      hint: "The average UK household has 2.4 people",
-      validation: {
-        min: 1,
-        max: 10,
-      }
-    },
-    {
-      title: "Email Address",
-      field: "email",
-      label: "What's your email address?",
-      placeholder: "your@email.com",
-      type: "email",
-      hint: "We'll send your personalized savings report here",
-    },
-  ];
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type } = e.target;
-    const currentStep = steps.find(step => step.field === name);
+    const { name, value } = e.target;
+    const currentStep = FORM_STEPS.find(s => s.field === name);
     
-    if (type === "number" && currentStep?.validation) {
-      const numValue = Number(value);
-      if (numValue < currentStep.validation.min) {
-        toast.error(`Value must be at least ${currentStep.validation.min}`);
-        return;
-      }
-      if (numValue > currentStep.validation.max) {
-        toast.error(`Value must be less than ${currentStep.validation.max}`);
-        return;
-      }
+    if (!currentStep) return;
+    
+    if (currentStep.type === "number") {
+      // Allow only numbers and empty string
+      if (value !== "" && !/^\d*\.?\d*$/.test(value)) return;
+      
+      if (!validateNumberInput(value, currentStep)) return;
     }
 
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
   const nextStep = () => {
-    const currentField = steps[step - 1].field;
-    if (!formData[currentField as keyof typeof formData]) {
+    const currentField = FORM_STEPS[step - 1].field;
+    if (!formData[currentField]) {
       toast.error("Please fill in this field before continuing");
       return;
     }
-    if (step < steps.length) {
+    if (step < FORM_STEPS.length) {
       setStep(step + 1);
     } else {
       handleSubmit();
@@ -122,7 +63,7 @@ export const EnergyForm = () => {
     navigate("/savings-overview", { state: { formData } });
   };
 
-  const currentStep = steps[step - 1];
+  const currentStep = FORM_STEPS[step - 1];
 
   if (!started) {
     return (
@@ -146,7 +87,7 @@ export const EnergyForm = () => {
     <Card className="p-6">
       <div className="mb-6">
         <div className="flex justify-between mb-2">
-          {steps.map((_, index) => (
+          {FORM_STEPS.map((_, index) => (
             <div
               key={index}
               className={`h-2 flex-1 mx-1 rounded ${
@@ -156,7 +97,7 @@ export const EnergyForm = () => {
           ))}
         </div>
         <p className="text-sm text-center text-muted-foreground">
-          Step {step} of {steps.length}
+          Step {step} of {FORM_STEPS.length}
         </p>
       </div>
 
@@ -168,7 +109,7 @@ export const EnergyForm = () => {
             name={currentStep.field}
             type={currentStep.type}
             placeholder={currentStep.placeholder}
-            value={formData[currentStep.field as keyof typeof formData]}
+            value={formData[currentStep.field]}
             onChange={handleChange}
             required
           />
@@ -192,7 +133,7 @@ export const EnergyForm = () => {
             onClick={nextStep}
             className="w-full"
           >
-            {step === steps.length ? "Submit" : "Next"}
+            {step === FORM_STEPS.length ? "Submit" : "Next"}
           </Button>
         </div>
       </div>
