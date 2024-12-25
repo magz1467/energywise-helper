@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { FORM_STEPS } from "./EnergyFormSteps";
-import { validateNumberInput } from "@/utils/form-validation";
 import { FormData } from "@/types/energy-form";
 
 export const EnergyForm = () => {
@@ -27,29 +26,18 @@ export const EnergyForm = () => {
     
     if (!currentStep) return;
     
+    // Allow empty string for clearing input
+    if (value === "") {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value,
+      }));
+      return;
+    }
+    
+    // For number fields, only allow numeric input
     if (currentStep.type === "number") {
-      // Allow empty string for clearing input
-      if (value === "") {
-        setFormData(prev => ({
-          ...prev,
-          [name]: value,
-        }));
-        return;
-      }
-      
-      // Only allow numeric input (including decimals)
       if (!/^\d*\.?\d*$/.test(value)) return;
-      
-      const numValue = parseFloat(value);
-      
-      // Only validate complete numbers
-      if (!isNaN(numValue) && currentStep.validation) {
-        const { min, max } = currentStep.validation;
-        if (numValue < min || numValue > max) {
-          toast.error(`Please enter a value between ${min} and ${max}`);
-          return;
-        }
-      }
     }
 
     setFormData(prev => ({
@@ -63,16 +51,6 @@ export const EnergyForm = () => {
     if (!formData[currentField]) {
       toast.error("Please fill in this field before continuing");
       return;
-    }
-    
-    const currentStep = FORM_STEPS[step - 1];
-    if (currentStep.type === "number" && currentStep.validation) {
-      const numValue = parseFloat(formData[currentField]);
-      const { min, max } = currentStep.validation;
-      if (isNaN(numValue) || numValue < min || numValue > max) {
-        toast.error(`Please enter a valid number between ${min} and ${max}`);
-        return;
-      }
     }
     
     if (step < FORM_STEPS.length) {
