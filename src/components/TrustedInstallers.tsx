@@ -45,23 +45,23 @@ export const TrustedInstallers = () => {
   return (
     <section className="py-12">
       <h2 className="text-3xl font-bold text-center mb-6">Our Trusted Installers</h2>
-      <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+      <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto px-4">
         Our nationwide network of certified installers is carefully vetted and continuously monitored through our review-driven system. With over 500 trusted professionals across the UK, we ensure quality service delivery and customer satisfaction.
       </p>
       
-      <div className="flex flex-col lg:flex-row gap-8">
+      <div className="flex flex-col lg:flex-row gap-8 px-4">
         {/* Left column - Installer Cards */}
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 space-y-4 overflow-visible">
           {installers.map((installer) => (
-            <Card key={installer.name} className="overflow-hidden hover:shadow-lg transition-shadow duration-200">
-              <div className="flex items-center p-2">
-                <Avatar className="h-12 w-12">
+            <Card key={installer.name} className="p-4 hover:shadow-lg transition-shadow duration-200">
+              <div className="flex items-center gap-4">
+                <Avatar className="h-12 w-12 flex-shrink-0">
                   <AvatarImage src={installer.image} alt={installer.name} />
                   <AvatarFallback>{installer.name[0]}</AvatarFallback>
                 </Avatar>
-                <div className="ml-3 flex-1">
-                  <h3 className="font-semibold">{installer.name}</h3>
-                  <div className="flex items-center">
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold truncate">{installer.name}</h3>
+                  <div className="flex items-center gap-2">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -74,20 +74,20 @@ export const TrustedInstallers = () => {
                         />
                       ))}
                     </div>
-                    <span className="ml-2 text-sm text-gray-600">
+                    <span className="text-sm text-gray-600 whitespace-nowrap">
                       ({installer.reviews} reviews)
                     </span>
                   </div>
                 </div>
-                <span className="text-sm text-gray-500">{installer.location}</span>
+                <span className="text-sm text-gray-500 flex-shrink-0">{installer.location}</span>
               </div>
             </Card>
           ))}
         </div>
         
-        {/* Right column - Map and Quality Assurance - Hidden on mobile */}
-        <div className="hidden lg:flex flex-1 flex-col space-y-6">
-          <div className="bg-white rounded-lg shadow-md p-4">
+        {/* Right column - Map and Quality Assurance */}
+        <div className="hidden lg:flex flex-1 flex-col gap-6">
+          <div className="bg-white rounded-lg shadow-md p-4 h-[300px]">
             <UKCoverageMap />
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
