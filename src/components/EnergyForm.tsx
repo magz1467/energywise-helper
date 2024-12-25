@@ -28,10 +28,27 @@ export const EnergyForm = () => {
     if (!currentStep) return;
     
     if (currentStep.type === "number") {
-      // Allow only numbers and empty string
-      if (value !== "" && !/^\d*\.?\d*$/.test(value)) return;
+      // Allow empty string for clearing input
+      if (value === "") {
+        setFormData(prev => ({
+          ...prev,
+          [name]: value,
+        }));
+        return;
+      }
       
-      if (!validateNumberInput(value, currentStep)) return;
+      // Only allow numeric input (including decimals)
+      if (!/^\d*\.?\d*$/.test(value)) return;
+      
+      const numValue = parseFloat(value);
+      
+      // Validate the numeric value if it's a complete number
+      if (!isNaN(numValue)) {
+        if (!validateNumberInput(value, currentStep)) {
+          toast.error(`Please enter a value between ${currentStep.min} and ${currentStep.max}`);
+          return;
+        }
+      }
     }
 
     setFormData(prev => ({
@@ -46,6 +63,16 @@ export const EnergyForm = () => {
       toast.error("Please fill in this field before continuing");
       return;
     }
+    
+    const currentStep = FORM_STEPS[step - 1];
+    if (currentStep.type === "number") {
+      const numValue = parseFloat(formData[currentField]);
+      if (isNaN(numValue) || !validateNumberInput(formData[currentField], currentStep)) {
+        toast.error(`Please enter a valid number between ${currentStep.min} and ${currentStep.max}`);
+        return;
+      }
+    }
+    
     if (step < FORM_STEPS.length) {
       setStep(step + 1);
     } else {
