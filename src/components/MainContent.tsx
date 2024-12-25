@@ -10,7 +10,6 @@ export const MainContent = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="space-y-6 sm:space-y-8">
         <div>
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Get Your Personalised Energy Savings Quote</h2>
           <EnergyForm />
         </div>
 
