@@ -54,14 +54,17 @@ export const TrustedInstallers = () => {
         <div className="flex-1 space-y-4 overflow-visible">
           {installers.map((installer) => (
             <Card key={installer.name} className="p-4 hover:shadow-lg transition-shadow duration-200">
-              <div className="flex items-center gap-4">
+              <div className="flex items-start gap-4">
                 <Avatar className="h-12 w-12 flex-shrink-0">
                   <AvatarImage src={installer.image} alt={installer.name} />
                   <AvatarFallback>{installer.name[0]}</AvatarFallback>
                 </Avatar>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold truncate">{installer.name}</h3>
-                  <div className="flex items-center gap-2">
+                  <div className="flex justify-between items-start">
+                    <h3 className="font-semibold truncate">{installer.name}</h3>
+                    <span className="text-sm text-gray-500 flex-shrink-0">{installer.location}</span>
+                  </div>
+                  <div className="flex flex-col gap-1">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -74,12 +77,11 @@ export const TrustedInstallers = () => {
                         />
                       ))}
                     </div>
-                    <span className="text-sm text-gray-600 whitespace-nowrap">
+                    <span className="text-sm text-gray-600">
                       ({installer.reviews} reviews)
                     </span>
                   </div>
                 </div>
-                <span className="text-sm text-gray-500 flex-shrink-0">{installer.location}</span>
               </div>
             </Card>
           ))}
