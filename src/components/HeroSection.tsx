@@ -8,16 +8,16 @@ export const HeroSection = () => {
           <span className="text-primary">The smarter way</span> to save energy
         </h1>
         
-        <div className="flex flex-row gap-4 sm:gap-6">
-          <div className="flex items-center gap-2">
+        <div className="flex flex-row gap-4 sm:gap-6 overflow-x-auto pb-2">
+          <div className="flex items-center gap-2 whitespace-nowrap">
             <CircleDollarSign className="h-5 w-5 text-primary shrink-0" />
             <span className="text-sm sm:text-base">£1456 average annual saving</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 whitespace-nowrap">
             <Users className="h-5 w-5 text-primary shrink-0" />
             <span className="text-sm sm:text-base">Over 12000 installations</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 whitespace-nowrap">
             <Star className="h-5 w-5 text-primary shrink-0" />
             <span className="text-sm sm:text-base">4.7 Trustpilot</span>
           </div>
