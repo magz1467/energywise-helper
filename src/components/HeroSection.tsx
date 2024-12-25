@@ -8,7 +8,7 @@ export const HeroSection = () => {
           <span className="text-primary">The smarter way</span> to save energy
         </h1>
         
-        <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6">
+        <div className="flex flex-row gap-4 sm:gap-6">
           <div className="flex items-center gap-2">
             <CircleDollarSign className="h-5 w-5 text-primary shrink-0" />
             <span className="text-sm sm:text-base">£1456 average annual saving</span>
