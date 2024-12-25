@@ -5,7 +5,7 @@ export const FORM_STEPS: FormStep[] = [
     title: "Monthly Electricity Usage",
     field: "electricityUsage",
     label: "What's your monthly electricity usage in kWh?",
-    placeholder: "Average UK household: 242 kWh/month",
+    placeholder: "242",
     type: "number",
     hint: "The average UK household uses around 242 kWh per month",
     validation: {
@@ -17,7 +17,7 @@ export const FORM_STEPS: FormStep[] = [
     title: "Monthly Gas Usage",
     field: "gasUsage",
     label: "What's your monthly gas usage in kWh?",
-    placeholder: "Average UK household: 1000 kWh/month",
+    placeholder: "1000",
     type: "number",
     hint: "The average UK household uses around 1000 kWh of gas per month",
     validation: {
@@ -29,7 +29,7 @@ export const FORM_STEPS: FormStep[] = [
     title: "Home Size",
     field: "homeSize",
     label: "What's the size of your home in square feet?",
-    placeholder: "Average UK home: 818 sq ft",
+    placeholder: "818",
     type: "number",
     hint: "The average UK home is 818 square feet",
     validation: {
@@ -41,7 +41,7 @@ export const FORM_STEPS: FormStep[] = [
     title: "Occupants",
     field: "occupants",
     label: "How many people live in your home?",
-    placeholder: "Average UK household: 2.4 people",
+    placeholder: "2.4",
     type: "number",
     hint: "The average UK household has 2.4 people",
     validation: {
