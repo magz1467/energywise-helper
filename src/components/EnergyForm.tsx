@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ export const EnergyForm = () => {
   const navigate = useNavigate();
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(1);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState<FormData>({
     electricityUsage: "",
     gasUsage: "",
@@ -19,6 +20,13 @@ export const EnergyForm = () => {
     occupants: "",
     email: "",
   });
+
+  // Focus input when step changes
+  useEffect(() => {
+    if (started && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [step, started]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -118,6 +126,7 @@ export const EnergyForm = () => {
             placeholder={currentStep.placeholder}
             value={formData[currentStep.field]}
             onChange={handleChange}
+            ref={inputRef}
             required
           />
           {currentStep.hint && (
