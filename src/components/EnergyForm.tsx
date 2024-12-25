@@ -42,10 +42,10 @@ export const EnergyForm = () => {
       
       const numValue = parseFloat(value);
       
-      // Validate the numeric value if it's a complete number
-      if (!isNaN(numValue)) {
-        if (!validateNumberInput(value, currentStep)) {
-          toast.error(`Please enter a value between ${currentStep.validation?.min} and ${currentStep.validation?.max}`);
+      // Only validate complete numbers
+      if (!isNaN(numValue) && currentStep.validation) {
+        if (numValue < currentStep.validation.min || numValue > currentStep.validation.max) {
+          toast.error(`Please enter a value between ${currentStep.validation.min} and ${currentStep.validation.max}`);
           return;
         }
       }
@@ -65,10 +65,10 @@ export const EnergyForm = () => {
     }
     
     const currentStep = FORM_STEPS[step - 1];
-    if (currentStep.type === "number") {
+    if (currentStep.type === "number" && currentStep.validation) {
       const numValue = parseFloat(formData[currentField]);
-      if (isNaN(numValue) || !validateNumberInput(formData[currentField], currentStep)) {
-        toast.error(`Please enter a valid number between ${currentStep.validation?.min} and ${currentStep.validation?.max}`);
+      if (isNaN(numValue) || numValue < currentStep.validation.min || numValue > currentStep.validation.max) {
+        toast.error(`Please enter a valid number between ${currentStep.validation.min} and ${currentStep.validation.max}`);
         return;
       }
     }

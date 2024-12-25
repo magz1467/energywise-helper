@@ -8,7 +8,9 @@ import { AwakeningHome } from "./AwakeningHome";
 export const MainContent = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <TrustMarkers />
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
         <div>
           <h2 className="text-2xl font-semibold mb-6">Get Your Personalised Energy Savings Quote</h2>
           <EnergyForm />
@@ -25,8 +27,6 @@ export const MainContent = () => {
         </div>
       </div>
 
-      <TrustMarkers />
-      
       <AwakeningHome />
       
       <Separator className="my-8 sm:my-12" />
