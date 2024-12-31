@@ -11,7 +11,7 @@ const Index = () => {
 
       <div className="container mx-auto px-4 flex-grow">
         <div className="bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8 relative overflow-hidden">
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-y-0 right-0 w-1/3 hidden lg:block z-0">
             <img
               src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/scientist.png"
               alt="Energy Saving Home"
