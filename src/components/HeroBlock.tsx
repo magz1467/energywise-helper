@@ -50,7 +50,7 @@ export const HeroBlock = () => {
 
       {/* Right Column */}
       <div className="w-1/2 p-4">
-        <div className="h-full w-full rounded-3xl overflow-hidden">
+        <div className="h-[70%] w-[70%] mx-auto rounded-3xl overflow-hidden">
           <img
             src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
             alt="Professional Electrician"
