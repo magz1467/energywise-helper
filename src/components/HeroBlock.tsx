@@ -2,8 +2,8 @@ import { EnergyForm } from "./EnergyForm";
 
 export const HeroBlock = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-start gap-8 bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8">
-      <div className="lg:w-1/2 space-y-6">
+    <div className="flex flex-col lg:flex-row items-center bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8 min-h-[600px]">
+      <div className="w-full lg:w-1/2 space-y-6 lg:pr-8">
         <h1 className="text-4xl font-bold">
           <span className="text-primary">The smarter way</span> to save energy
         </h1>
@@ -35,7 +35,7 @@ export const HeroBlock = () => {
         </div>
         <EnergyForm />
       </div>
-      <div className="hidden lg:block lg:w-1/2 lg:h-[600px]">
+      <div className="w-full lg:w-1/2 h-[300px] lg:h-[600px] mt-8 lg:mt-0">
         <img
           src="/lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
           alt="Professional Electrician"
