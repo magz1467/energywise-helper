@@ -49,12 +49,14 @@ export const HeroBlock = () => {
       </div>
 
       {/* Right Column */}
-      <div className="w-1/2">
-        <img
-          src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
-          alt="Professional Electrician"
-          className="w-full h-full object-cover"
-        />
+      <div className="w-1/2 p-4">
+        <div className="h-full w-full rounded-3xl overflow-hidden">
+          <img
+            src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
+            alt="Professional Electrician"
+            className="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
   );
