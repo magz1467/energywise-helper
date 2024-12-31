@@ -10,9 +10,18 @@ const Index = () => {
       <TopNav />
 
       <div className="container mx-auto px-4 flex-grow">
-        <div className="bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8">
-          <HeroSection />
-          <MainContent />
+        <div className="bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8 relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img
+              src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/scientist.png"
+              alt="Energy Saving Home"
+              className="w-full h-full object-cover opacity-10"
+            />
+          </div>
+          <div className="relative z-10">
+            <HeroSection />
+            <MainContent />
+          </div>
         </div>
 
         <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
