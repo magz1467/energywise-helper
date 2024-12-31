@@ -2,14 +2,11 @@ import { EnergyForm } from "./EnergyForm";
 
 export const HeroBlock = () => {
   return (
-    <div className="relative overflow-hidden bg-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-      
-      <div className="relative container mx-auto px-4 py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+    <div className="relative bg-white">
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row items-center min-h-[600px]">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="w-full lg:w-1/2 space-y-8 py-12 lg:py-20">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 <span className="text-primary block">The smarter way</span>
@@ -56,13 +53,12 @@ export const HeroBlock = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
+          <div className="w-full lg:w-1/2 h-[600px]">
             <img
               src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
               alt="Professional Electrician"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
         </div>
       </div>
