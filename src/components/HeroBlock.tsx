@@ -42,6 +42,7 @@ export const HeroBlock = () => {
           src="/lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
           alt="Professional Electrician"
           className="w-full h-full object-cover rounded-lg"
+          style={{ maxHeight: '100%' }}
         />
       </div>
     </div>
