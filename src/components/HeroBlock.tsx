@@ -49,7 +49,7 @@ export const HeroBlock = () => {
           <div className="relative h-full">
             <div className="absolute inset-0 lg:relative lg:h-[calc(100%+4rem)] lg:-my-8 lg:-mr-8">
               <img
-                src="/lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
+                src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
                 alt="Professional Electrician"
                 className="w-full h-full object-cover rounded-r-lg"
               />
