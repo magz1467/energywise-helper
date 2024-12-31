@@ -2,27 +2,21 @@ import { EnergyForm } from "./EnergyForm";
 
 export const HeroBlock = () => {
   return (
-    <div className="relative bg-white">
-      <div className="absolute inset-0">
-        <div className="h-full w-full">
-          <div className="relative h-full">
-            {/* Right Image - Positioned absolutely */}
-            <div className="absolute right-0 top-0 w-1/2 h-full hidden lg:block">
-              <img
-                src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
-                alt="Professional Electrician"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
+    <div className="relative">
+      {/* Right Image - Desktop only */}
+      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
+        <img
+          src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
+          alt="Professional Electrician"
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div className="relative mx-auto max-w-7xl">
-        {/* Content Container */}
-        <div className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-          {/* Left Content - Limited width */}
-          <div className="w-full max-w-xl space-y-8">
+      {/* Content Container */}
+      <div className="container mx-auto relative">
+        <div className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+          {/* Left Content */}
+          <div className="w-full lg:w-1/2 max-w-xl space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 <span className="text-primary block">The smarter way</span>
@@ -68,15 +62,6 @@ export const HeroBlock = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Image - Only visible on small screens */}
-      <div className="relative w-full h-[300px] lg:hidden mt-8">
-        <img
-          src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
-          alt="Professional Electrician"
-          className="w-full h-full object-cover"
-        />
       </div>
     </div>
   );
