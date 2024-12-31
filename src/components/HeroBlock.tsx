@@ -3,17 +3,33 @@ import { EnergyForm } from "./EnergyForm";
 export const HeroBlock = () => {
   return (
     <div className="relative bg-white">
-      <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row items-center min-h-[600px]">
-          {/* Left Content */}
-          <div className="w-full lg:w-1/2 space-y-8 py-12 lg:py-20">
+      <div className="absolute inset-0">
+        <div className="h-full w-full">
+          <div className="relative h-full">
+            {/* Right Image - Positioned absolutely */}
+            <div className="absolute right-0 top-0 w-1/2 h-full hidden lg:block">
+              <img
+                src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
+                alt="Professional Electrician"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative mx-auto max-w-7xl">
+        {/* Content Container */}
+        <div className="relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+          {/* Left Content - Limited width */}
+          <div className="w-full max-w-xl space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 <span className="text-primary block">The smarter way</span>
                 to save energy
               </h1>
               
-              <p className="text-lg text-gray-600 max-w-xl">
+              <p className="text-lg text-gray-600">
                 Join thousands of homeowners who are saving money and reducing their carbon footprint with our energy-saving solutions.
               </p>
             </div>
@@ -51,16 +67,16 @@ export const HeroBlock = () => {
               <EnergyForm />
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="w-full lg:w-1/2 h-[600px]">
-            <img
-              src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
-              alt="Professional Electrician"
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
+      </div>
+
+      {/* Mobile Image - Only visible on small screens */}
+      <div className="relative w-full h-[300px] lg:hidden mt-8">
+        <img
+          src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
+          alt="Professional Electrician"
+          className="w-full h-full object-cover"
+        />
       </div>
     </div>
   );
