@@ -37,12 +37,11 @@ export const HeroBlock = () => {
         </div>
         <EnergyForm />
       </div>
-      <div className="hidden lg:block lg:w-1/2 relative">
+      <div className="hidden lg:block lg:w-1/2">
         <img
           src="/lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
           alt="Professional Electrician"
           className="w-full h-full object-cover rounded-lg"
-          style={{ maxHeight: '100%' }}
         />
       </div>
     </div>
