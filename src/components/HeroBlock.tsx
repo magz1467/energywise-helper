@@ -4,8 +4,8 @@ export const HeroBlock = () => {
   return (
     <div className="flex h-screen">
       {/* Left Column */}
-      <div className="w-1/2 p-12">
-        <div className="max-w-xl space-y-6">
+      <div className="w-1/2 p-8">
+        <div className="max-w-xl space-y-4">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               <span className="text-primary block">The smarter way</span>
@@ -13,7 +13,7 @@ export const HeroBlock = () => {
             </h1>
           </div>
 
-          <div className="grid gap-2">
+          <div className="grid gap-1.5">
             <div className="flex items-center gap-3">
               <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                 <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
