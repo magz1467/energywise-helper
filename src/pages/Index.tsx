@@ -1,7 +1,10 @@
 import { TopNav } from "@/components/TopNav";
-import { HeroSection } from "@/components/HeroSection";
-import { MainContent } from "@/components/MainContent";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { HeroBlock } from "@/components/HeroBlock";
+import { HowItWorks } from "@/components/HowItWorks";
+import { AiSavings } from "@/components/AiSavings";
+import { Faq } from "@/components/Faq";
+import { TrustedInstallers } from "@/components/TrustedInstallers";
+import { RegisterInterest } from "@/components/RegisterInterest";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Index = () => {
@@ -10,121 +13,10 @@ const Index = () => {
       <TopNav />
 
       <div className="container mx-auto px-4 flex-grow">
-        <div className="bg-white/90 p-8 rounded-lg backdrop-blur-sm mb-8 relative overflow-hidden">
-          <div className="absolute inset-y-0 right-0 w-1/3 hidden lg:block z-0">
-            <img
-              src="https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/scientist.png"
-              alt="Energy Saving Home"
-              className="w-full h-full object-cover opacity-10"
-            />
-          </div>
-          <div className="relative z-10">
-            <HeroSection />
-            <MainContent />
-          </div>
-        </div>
-
-        <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              {
-                step: 1,
-                title: "Enter your home data",
-                description: "Provide information about your energy usage and home details"
-              },
-              {
-                step: 2,
-                title: "See your savings",
-                description: "Get a detailed analysis of potential energy savings"
-              },
-              {
-                step: 3,
-                title: "Get recommended measures",
-                description: "Receive personalized energy-saving recommendations"
-              },
-              {
-                step: 4,
-                title: "Start saving",
-                description: "Implement the suggestions to reduce your energy consumption"
-              }
-            ].map((item) => (
-              <div key={item.step} className="text-center p-4">
-                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center">How AI Can Help You Save Money</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              {
-                step: 1,
-                title: "Compare Your Usage",
-                description: "See how your energy consumption compares to similar households in your area"
-              },
-              {
-                step: 2,
-                title: "Identify High Usage",
-                description: "Discover which devices are consuming the most energy in your home"
-              },
-              {
-                step: 3,
-                title: "Smart Automations",
-                description: "Create automated schedules to reduce energy usage during inactive periods"
-              },
-              {
-                step: 4,
-                title: "Smart Device Integration",
-                description: "Receive intelligent prompts to optimize your connected devices' energy consumption"
-              }
-            ].map((item) => (
-              <div key={item.step} className="text-center p-6 bg-primary/5 rounded-lg">
-                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-semibold mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6 text-center">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>How accurate are your energy savings calculations?</AccordionTrigger>
-              <AccordionContent>
-                Our calculations are based on industry-standard energy consumption models and real-world data. We typically achieve 85-90% accuracy when comparing predicted to actual savings, though results may vary based on individual usage patterns and environmental factors.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>What data do you use to generate the savings estimates?</AccordionTrigger>
-              <AccordionContent>
-                We analyze your provided energy usage data, home size, number of occupants, and current energy rates. This is combined with regional climate data and typical energy consumption patterns to create personalized estimates.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>How often should I update my energy consumption data?</AccordionTrigger>
-              <AccordionContent>
-                For the most accurate predictions, we recommend updating your data monthly. This helps account for seasonal variations and changes in usage patterns, ensuring our recommendations remain relevant and accurate.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>Can the actual savings differ from the predicted amounts?</AccordionTrigger>
-              <AccordionContent>
-                Yes, actual savings can vary based on factors such as weather conditions, changes in energy usage patterns, and how thoroughly recommendations are implemented. Our estimates are based on typical scenarios, but individual results may differ.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
+        <HeroBlock />
+        <HowItWorks />
+        <AiSavings />
+        <Faq />
 
         <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
           <h2 className="text-2xl font-semibold mb-6 text-center">Meet the Team</h2>
@@ -140,6 +32,9 @@ const Index = () => {
             </p>
           </div>
         </div>
+
+        <TrustedInstallers />
+        <RegisterInterest />
       </div>
 
       <footer className="bg-white/90 backdrop-blur-sm mt-16 border-t border-gray-200">
