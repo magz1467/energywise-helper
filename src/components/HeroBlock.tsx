@@ -2,21 +2,12 @@ import { EnergyForm } from "./EnergyForm";
 
 export const HeroBlock = () => {
   return (
-    <div className="relative">
-      {/* Right Image - Desktop only */}
-      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full">
-        <img
-          src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
-          alt="Professional Electrician"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Content Container */}
-      <div className="container mx-auto relative">
-        <div className="py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-          {/* Left Content */}
-          <div className="w-full lg:w-1/2 max-w-xl space-y-8">
+    <div className="relative min-h-[800px]">
+      {/* Main flex container */}
+      <div className="absolute inset-0 flex">
+        {/* Left content - fixed to 50% width */}
+        <div className="w-1/2 p-12">
+          <div className="max-w-xl space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
                 <span className="text-primary block">The smarter way</span>
@@ -61,6 +52,15 @@ export const HeroBlock = () => {
               <EnergyForm />
             </div>
           </div>
+        </div>
+
+        {/* Right image - fixed to 50% width */}
+        <div className="w-1/2 hidden lg:block">
+          <img
+            src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
+            alt="Professional Electrician"
+            className="w-full h-full object-cover"
+          />
         </div>
       </div>
     </div>
