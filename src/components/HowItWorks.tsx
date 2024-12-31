@@ -1,6 +1,6 @@
 export const HowItWorks = () => {
   return (
-    <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8">
+    <div className="bg-white/90 rounded-lg shadow-lg backdrop-blur-sm p-8 mb-8 mt-32">
       <h2 className="text-2xl font-semibold mb-6 text-center">How It Works</h2>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {[
