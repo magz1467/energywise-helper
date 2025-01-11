@@ -2,9 +2,9 @@ import { EnergyForm } from "./EnergyForm";
 
 export const HeroBlock = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       {/* Left Column */}
-      <div className="w-1/2 p-8">
+      <div className="w-full md:w-1/2 p-8">
         <div className="max-w-xl space-y-4">
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -48,8 +48,8 @@ export const HeroBlock = () => {
         </div>
       </div>
 
-      {/* Right Column */}
-      <div className="w-1/2 p-4">
+      {/* Right Column - Hidden on mobile, visible from md breakpoint up */}
+      <div className="hidden md:block w-1/2 p-4">
         <div className="h-[70%] w-[70%] mx-auto rounded-3xl overflow-hidden">
           <img
             src="lovable-uploads/485e774d-2031-4b4e-a25e-2d8b36777f6b.png"
